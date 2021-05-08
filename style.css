@@ -1,0 +1,95 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: linear-gradient(180deg, orange, orangered);
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+h1{
+    color: rgb(255, 248, 234);
+    margin-bottom: 40px;
+}
+.message-for-small-mobiles{
+    display: none;
+}
+.container{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(0,0,0,.4);
+}
+.content{
+    width: 100%;
+}
+table{
+    color: white;
+    width:100%;
+    border-collapse: collapse;
+    text-align: center; /*You can change 'center to start' HERE*/
+    border-radius: 10px;
+    box-shadow: 0 0 100px 20px rgb(142, 42, 6);
+}
+thead{
+    background-color: rgb(128, 98, 42);
+}
+th{
+    padding: 1rem;
+    opacity: .8;
+    text-align: center; /*AND HERE*/
+}
+tbody tr td{
+    padding: 1.30rem;
+    opacity: .7;
+}
+tbody tr:nth-child(even){
+    background-color: rgb(0,0,0,.1);
+}
+@media screen and (min-width: 678px) and (max-width:992px){
+    .container{
+        width: 90%;
+    }
+    h1{
+        font-size: 18px;
+    }
+}
+/* for mobiles */
+@media screen and (max-width:678px){
+    .container{
+        width: 100%;
+    }
+    tbody tr td{
+        padding: 1.30rem .50rem;
+    }
+    h1{
+        font-size: 15px;
+    }
+}
+@media screen and (max-width:350px){
+    .container{
+        overflow-x: scroll;
+        max-width: 100vw;
+        justify-content: start;
+    }
+    .container::-webkit-scrollbar{
+        display: none;
+    }
+    .message-for-small-mobiles{
+        display: block;
+        text-align: center;
+    }
+    .message-for-small-mobiles p{
+        color: white;
+        font-weight: bold;
+    }
+    h1{
+        font-size: 12px;
+    }
+}
